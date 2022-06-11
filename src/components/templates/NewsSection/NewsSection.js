@@ -1,7 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { ArticleWrapper, ContentWrapper, NewsSectionHeader, TitleWrapper, Wrapper } from 'components/templates/NewsSection/NewsSection.styles';
-import { Button } from 'components/atoms/Button/Button';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import {
+  ArticleWrapper,
+  ContentWrapper,
+  NewsSectionHeader,
+  TitleWrapper,
+  Wrapper,
+} from "components/templates/NewsSection/NewsSection.styles";
+import { Button } from "components/atoms/Button/Button";
+import axios from "axios";
 
 export const query = `
          {
@@ -19,12 +25,12 @@ export const query = `
 
 const NewsSection = () => {
   const [articles, setArticles] = useState([]);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   useEffect(() => {
     axios
       .post(
-        'https://graphql.datocms.com/',
+        "https://graphql.datocms.com/",
         {
           query,
         },
@@ -56,11 +62,11 @@ const NewsSection = () => {
               <p>{content}</p>
               {image ? <img src={image.url} alt="article" /> : null}
             </ContentWrapper>
-            <Button isBig>Read more</Button>
+            {/* <Button isBig>Read more</Button> */}
           </ArticleWrapper>
         ))
       ) : (
-        <NewsSectionHeader>{error ? error : 'Loading...'}</NewsSectionHeader>
+        <NewsSectionHeader>{error ? error : "Loading..."}</NewsSectionHeader>
       )}
     </Wrapper>
   );

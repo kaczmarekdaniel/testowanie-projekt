@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ViewWrapper = styled.div`
   margin: 25px;

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper';
+import styled from "styled-components";
+import { ViewWrapper } from "components/molecules/ViewWrapper/ViewWrapper";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -11,6 +11,11 @@ export const Wrapper = styled.div`
 
 export const GroupWrapper = styled(ViewWrapper)`
   margin: 0;
+  max-width: unset;
+  background-color: unset;
+  box-shadow: none;
+  border-radius: unset;
+  padding: unset;
 `;
 
 export const TitleWrapper = styled.div`
@@ -21,17 +26,19 @@ export const TitleWrapper = styled.div`
     margin-left: 15px;
     display: inline-block;
     text-align: center;
-    background-color: white;
+    background-color: #d91918;
     border-radius: 50px;
     padding: 5px;
     width: 30px;
     height: 30px;
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.darkGrey};
+    color: white;
     font-weight: bold;
+    border: 1px solid #d91918;
   }
 
   nav a:hover {
-    background-color: ${({ theme }) => theme.colors.lightPurple};
+    background-color: white;
+    color: #d91918;
   }
 `;

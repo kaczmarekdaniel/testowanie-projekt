@@ -1,6 +1,14 @@
-import React from 'react';
-import { Logo, StyledLink, Wrapper } from 'components/organisms/Navigation/Navigation.styles';
-import { useAuth } from 'hooks/useAuth';
+import React from "react";
+import {
+  Logo,
+  StyledLink,
+  Wrapper,
+} from "components/organisms/Navigation/Navigation.styles";
+import { useAuth } from "hooks/useAuth";
+
+const logout = {
+  "margin-left": "120px",
+};
 
 const Navigation = () => {
   const auth = useAuth();
@@ -18,7 +26,12 @@ const Navigation = () => {
       <StyledLink to="/notes">Notes</StyledLink>
       <StyledLink to="/news">News</StyledLink>
 
-      <StyledLink as="a" className="logOut" onClick={auth.signOut}>
+      <StyledLink
+        style={logout}
+        as="a"
+        className="logOut"
+        onClick={auth.signOut}
+      >
         Logout
       </StyledLink>
     </Wrapper>

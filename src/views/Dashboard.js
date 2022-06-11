@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { Redirect, useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import StudentsList from 'components/organisms/StudentsList/StudentsList';
-import { useStudents } from 'hooks/useStudents';
-import { GroupWrapper, TitleWrapper, Wrapper } from 'views/Dashboard.styles';
-import { Title } from 'components/atoms/Title/Title';
-import useModal from 'components/organisms/Modal/useModal';
-import StudentDetails from 'components/molecules/StudentDetails/StudentDetails';
-import Modal from 'components/organisms/Modal/Modal';
-import { useGetGroupsQuery } from 'store';
+import React, { useEffect, useState } from "react";
+import { Redirect, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import StudentsList from "components/organisms/StudentsList/StudentsList";
+import { useStudents } from "hooks/useStudents";
+import { GroupWrapper, TitleWrapper, Wrapper } from "views/Dashboard.styles";
+import { Title } from "components/atoms/Title/Title";
+import useModal from "components/organisms/Modal/useModal";
+import StudentDetails from "components/molecules/StudentDetails/StudentDetails";
+import Modal from "components/organisms/Modal/Modal";
+import { useGetGroupsQuery } from "store";
+
+const styledId = {
+  color: "#d91918",
+};
 
 const Dashboard = () => {
   const [currentStudent, setCurrentStudent] = useState(null);
@@ -31,16 +35,19 @@ const Dashboard = () => {
     );
   }
 
-  if (!id && data.groups.length > 0) return <Redirect to={`/group/${data.groups[0].id}`} />;
+  if (!id && data.groups.length > 0)
+    return <Redirect to={`/group/${data.groups[0].id}`} />;
 
   return (
     <Wrapper>
       <TitleWrapper>
-        <Title as="h2">Group {id}</Title>
+        <Title as="h2">
+          Group <span style={styledId}>{id}</span>
+        </Title>
         <nav>
           {data.groups.map(({ id }) => (
             <Link key={id} to={`/group/${id}`}>
-              {id}{' '}
+              {id}{" "}
             </Link>
           ))}
         </nav>

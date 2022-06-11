@@ -1,20 +1,21 @@
-import styled from 'styled-components';
-import { Input } from 'components/atoms/Input/Input';
+import styled from "styled-components";
+import { Input } from "components/atoms/Input/Input";
 
 export const SearchBarWrapper = styled.div`
   grid-row: 1 / 2;
   grid-column: 2 / 3;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.darkPurple};
+  border-bottom: 1px solid #d91918;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 40px;
+  padding: 0 40px 8px;
 
   ${Input} {
     font-size: ${({ theme }) => theme.fontSize.xl};
     width: 100%;
     max-width: 350px;
     border: 2px solid ${({ theme }) => theme.colors.lightPurple};
+    margin: 0;
   }
 `;
 
@@ -33,7 +34,7 @@ export const SearchWrapper = styled.div`
 `;
 
 export const SearchResults = styled.ul`
-  visibility: ${({ isVisible }) => (isVisible ? 'visible' : 'hidden')};
+  visibility: ${({ isVisible }) => (isVisible ? "visible" : "hidden")};
   z-index: 1000;
   max-height: 500px;
   overflow-y: scroll;
@@ -52,7 +53,8 @@ export const SearchResults = styled.ul`
 export const SearchResultsItem = styled.li`
   font-weight: bold;
   color: ${({ theme }) => theme.colors.darkGrey};
-  background-color: ${({ theme, isHighlighted }) => (isHighlighted ? theme.colors.lightPurple : theme.colors.white)};
+  background-color: ${({ theme, isHighlighted }) =>
+    isHighlighted ? theme.colors.lightPurple : theme.colors.white};
   width: 100%;
   padding: 20px 5px;
 

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.li`
   display: flex;
@@ -6,18 +6,23 @@ export const Wrapper = styled.li`
   position: relative;
   cursor: pointer;
 
-  &:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background-color: lightgrey;
-  }
+  padding: 16px 24px;
+  border-radius: 24px;
+  box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+
+  /* &:not(:last-child)::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 1px;
+		background-color: lightgrey;
+	} */
 `;
 
 export const StyledInfo = styled.div`
-  padding: 25px 20px;
+  padding: 16px;
 
   p {
     margin: 0;

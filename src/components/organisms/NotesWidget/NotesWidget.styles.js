@@ -1,16 +1,18 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 400px;
   height: auto;
-  transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(400px)')};
+  transform: ${({ isOpen }) =>
+    isOpen ? "translateX(0)" : "translateX(400px)"};
   transition: transform 0.6s ease-in-out;
   max-height: 700px;
-  position: absolute;
-  right: 0;
-  top: 40px;
+  position: fixed;
+  right: -2px;
+  top: 23px;
   background: white;
   border: 2px solid ${({ theme }) => theme.colors.darkGrey};
+  border-radius: 20px 0 0 20px;
 `;
 
 export const WidgetHandler = styled.button`

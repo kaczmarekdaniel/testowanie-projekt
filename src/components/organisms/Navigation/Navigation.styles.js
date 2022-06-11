@@ -1,26 +1,29 @@
-import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Wrapper = styled.nav`
   width: 100%;
-  height: 10vh;
   display: flex;
   flex-direction: row;
-  border-right: 1px solid ${({ theme }) => theme.colors.darkPurple};
-
-  padding: 30px 0;
+  justify-content: center;
+  /* padding: 32px 0 40px; */
+  background-color: #d91918;
+  margin: 0 0 56px;
   grid-row: 1 / 3;
   grid-column: 1 / 1;
+  position: relative;
 `;
 
 export const Logo = styled.div`
-  background-color: ${({ theme }) => theme.colors.darkGrey};
-  width: 10%;
+  background-color: #3156a3;
+  width: 140px;
   height: 60px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 30px;
+  position: absolute;
+  top: 28px;
+  left: 0;
 
   h1 {
     font-size: 15px;
@@ -30,24 +33,26 @@ export const Logo = styled.div`
   }
 `;
 
-const activeClassName = 'active-link';
+const activeClassName = "active-link";
+
 export const StyledLink = styled(NavLink).attrs({ activeClassName })`
   cursor: pointer;
   font-weight: bold;
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.darkGrey};
+  color: #fff;
+  padding-bottom: 4px;
   text-align: right;
   margin: 15px 20px 15px 20px;
   position: relative;
 
   &.${activeClassName} {
-    border-bottom: 1px solid violet;
+    border-bottom: 2px solid #fff;
   }
 
   &::after {
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
-    content: '';
+    content: "";
     position: absolute;
     width: 18px;
     height: 3px;

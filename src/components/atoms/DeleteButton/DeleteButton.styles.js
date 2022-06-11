@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const StyledButton = styled.button`
   width: 22px;
   height: 22px;
   margin: 0 10px;
-  background-color: ${({ theme }) => theme.colors.grey};
+  background-color: #d91918;
   border-radius: 50px;
   border: none;
   color: white;
