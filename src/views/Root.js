@@ -1,9 +1,10 @@
-import React from 'react';
-import { useAuth } from 'hooks/useAuth';
-import ErrorMessage from 'components/molecules/ErrorMessage/ErrorMessage';
-import { useError } from 'hooks/useError';
-import AuthenticatedApp from 'views/AuthenticatedApp';
-import UnauthenticatedApp from 'views/UnauthenticatedApp';
+import React from "react";
+import { useAuth } from "hooks/useAuth";
+import ErrorMessage from "components/molecules/ErrorMessage/ErrorMessage";
+import { useError } from "hooks/useError";
+import AuthenticatedApp from "views/AuthenticatedApp";
+import UnauthenticatedApp from "views/UnauthenticatedApp";
+import { db } from "mocks/db";
 
 const Root = () => {
   const auth = useAuth();

@@ -21,6 +21,32 @@ describe("Root component", () => {
     await waitFor(() => screen.getByText(/Oops/));
   });
 
+  it("Diplays error message when no login is passed", async () => {
+    render(<Root />);
+    const login = screen.getByLabelText("login");
+    const password = screen.getByTestId("hasło");
+
+    fireEvent.change(login, { target: { value: "" } });
+    fireEvent.change(password, { target: { value: "Test123" } });
+
+    fireEvent.click(screen.getByText("Sign in"));
+
+    await waitFor(() => screen.getByText(/Login is required/));
+  });
+
+  it("Diplays error message when no when no password is passed", async () => {
+    render(<Root />);
+    const login = screen.getByLabelText("login");
+    const password = screen.getByTestId("hasło");
+
+    fireEvent.change(login, { target: { value: "wiktor@broders.com" } });
+    fireEvent.change(password, { target: { value: "" } });
+
+    fireEvent.click(screen.getByText("Sign in"));
+
+    await waitFor(() => screen.getByText(/Password is required/));
+  });
+
   it("Diplays authenticated application", async () => {
     render(<Root />);
     const login = screen.getByLabelText("login");
@@ -31,6 +57,6 @@ describe("Root component", () => {
 
     fireEvent.click(screen.getByText("Sign in"));
 
-    await waitFor(() => screen.getByText(/Lonnie/));
+    await screen.findByText(/Lonnie/);
   });
 });

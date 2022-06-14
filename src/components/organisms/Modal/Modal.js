@@ -5,11 +5,11 @@ import { Button } from "components/atoms/Button/Button";
 
 const redesigned = {
   width: "100%",
-  "max-width": "120px",
+  maxWidth: "120px",
   color: "#ffffff",
-  "background-color": "#000",
+  backgroundColor: "#000",
   background: "linear-gradient(#f06 40%, #d91918)",
-  "border-radius": "32px",
+  borderRadius: "32px",
   margin: "0 0 40px 0",
   padding: "16px 40px",
   border: "2px solid #fff",

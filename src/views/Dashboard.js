@@ -46,7 +46,7 @@ const Dashboard = () => {
         </Title>
         <nav>
           {data.groups.map(({ id }) => (
-            <Link key={id} to={`/group/${id}`}>
+            <Link key={id} to={`/group/${id}`} data-testid={`group${id}btn`}>
               {id}{" "}
             </Link>
           ))}

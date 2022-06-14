@@ -7,7 +7,7 @@ import {
 import { useAuth } from "hooks/useAuth";
 
 const logout = {
-  "margin-left": "120px",
+  marginLeft: "120px",
 };
 
 const Navigation = () => {

@@ -12,12 +12,12 @@ import { useForm } from "react-hook-form";
 
 const redesigned = {
   width: "100%",
-  "max-width": "120px",
-  "align-self": "flex-end",
+  maxWidth: "120px",
+  alignSelf: "flex-end",
   color: "#ffffff",
-  "background-color": "#000",
+  backgroundColor: "#000",
   background: "linear-gradient(#f06 40%, #d91918)",
-  "border-radius": "32px",
+  borderRadius: "32px",
   margin: "0",
   padding: "16px 40px",
   border: "2px solid #fff",
